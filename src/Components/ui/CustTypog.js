@@ -13,6 +13,7 @@ export default function CustTypog(props) {
 
   return (
     <Typography
+      variant={props.variant}
       style={{
         fontSize: props.fonts,
         fontWeight: props.weight,

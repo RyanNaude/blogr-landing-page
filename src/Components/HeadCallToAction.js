@@ -15,9 +15,13 @@ import CustTypog from "./ui/CustTypog";
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: "1rem",
+    marginBottom: "2rem",
     [theme.breakpoints.down("md")]: {
       // width: "375px",
     },
+  },
+  gridMarg: {
+    marginBottom: "2rem",
   },
 }));
 
@@ -29,8 +33,14 @@ export default function HeadCallToAction(props) {
   return (
     <Grid item container xs={12} direction="row" className={classes.root}>
       <Grid item xs={3}></Grid>
-      <Grid item container xs={6}>
-        <Grid item container justifyContent={"center"} alignItems={"center"}>
+      <Grid item container xs={6} direction={"column"}>
+        <Grid
+          item
+          container
+          justifyContent={"center"}
+          alignItems={"center"}
+          className={classes.gridMarg}
+        >
           <CustTypog
             text={"A modern publishing platform"}
             fonts={"45px"}
@@ -39,36 +49,45 @@ export default function HeadCallToAction(props) {
             fontFamily={"Overpass"}
           />
         </Grid>
-        <Grid item container justifyContent={"center"} alignItems={"center"}>
+        <Grid
+          item
+          container
+          justifyContent={"center"}
+          alignItems={"center"}
+          className={classes.gridMarg}
+        >
           <CustTypog
             text={"Grow your audience and build your online brand"}
             fonts={"18px"}
             colorFont={"#fff"}
             weight={"300"}
             fontFamily={"Overpass"}
-            letSpace={"2px"}
+            letSpace={""}
           />
         </Grid>
-        <Grid item xs={6}>
-          <CustButton
-            butName={"Login"}
-            // handleChange={handleChange}
-            butValue={"Login"}
-            variant={"text"}
-            color={theme.palette.White.main}
-            backgroundColor={theme.palette.primary.main}
-          />
-        </Grid>
-        <Grid item xs={6}>
-          <CustButton
-            butName={"Signup"}
-            // handleChange={handleChange}
-            butValue={"Signup"}
-            variant={"contained"}
-            color={theme.palette.primary.main}
-            backgroundColor={theme.palette.White.main}
-            fontWeight={"600"}
-          />
+        <Grid item container direction={"row"} justifyContent={"center"}>
+          <Grid item xs={3}>
+            <CustButton
+              butName={"Start for free"}
+              // handleChange={handleChange}
+              butValue={"Start"}
+              variant={"contained"}
+              color={theme.palette.primary.main}
+              backgroundColor={theme.palette.White.main}
+              fontWeight={"600"}
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <CustButton
+              butName={"Learn More"}
+              // handleChange={handleChange}
+              butValue={"Learn"}
+              variant={"outlined"}
+              color={theme.palette.White.main}
+              backgroundColor={theme.palette.primary.main}
+              fontWeight={"600"}
+            />
+          </Grid>
         </Grid>
       </Grid>
       <Grid item xs={3}></Grid>

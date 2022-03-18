@@ -15,6 +15,10 @@ import MainMenu from "../../Components/MainMenu";
 import LoginModule from "../../Components/LoginModule";
 import HeadCallToAction from "../../Components/HeadCallToAction";
 
+/** import custom svg */
+import IntroDesktop from "../../Assets/Images/bg-pattern-intro-desktop.svg";
+import IntroMobile from "../../Assets/Images/bg-pattern-intro-mobile.svg";
+
 /** Material UI Styles */
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +27,12 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "1rem",
     paddingLeft: "5rem",
     width: "1440px",
-    height: "15rem",
+    height: "25rem",
+    backgroundImage: `url(${IntroDesktop})`,
+    backgroundSize: "150%",
+    background: "#f3f3f3  no-repeat",
+    backgroundPosition: "15% 50%",
+
     [theme.breakpoints.down("md")]: {
       // width: "375px",
     },
@@ -37,7 +46,7 @@ export default function Header(props) {
 
   return (
     <Grid container className={classes.root}>
-      <Grid item container  direction="row">
+      <Grid item container direction="row">
         <Grid item container direction="row" xs={2}>
           <MainLogo />
         </Grid>
@@ -60,7 +69,7 @@ export default function Header(props) {
           />
         </Grid>
         <Grid item container xs={3}></Grid>
-        <Grid item containe xs={3}>
+        <Grid item container xs={3} style={{ paddingRight: "2rem" }}>
           <LoginModule />
         </Grid>
       </Grid>

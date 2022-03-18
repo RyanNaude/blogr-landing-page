@@ -10,6 +10,7 @@ import Footer from "../Layout/Footer/Footer";
 /** Import MUI 5 Theme */
 import { ThemeProvider } from "@mui/styles";
 import theme from "../Assets/Theme/theme";
+import { themeOptions } from "../Assets/Theme/ThemeOptions";
 
 /** import material ui 5 components */
 import { Grid } from "@mui/material";
@@ -62,7 +63,7 @@ function App() {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <Grid container justifyContent={"center"} alignItems={"center"}>
+        <Grid container justifyContent={"center"} alignItems={"center"} style={{backgroundColor: "#F3F3F3"}}>
           <Grid item container justifyContent={"center"} width="1440px">
             <Header
               prodMap={prodMap}

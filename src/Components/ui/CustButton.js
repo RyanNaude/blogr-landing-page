@@ -15,20 +15,10 @@ const useStyles = makeStyles((theme) => ({
     height: "2rem",
     borderRadius: "50px",
     width: "90%",
-    "&:hover": {
-      // backgroundColor: theme.palette.buttonHoverBackground.main,
-      // color: theme.palette.buttonBackground.main,
-    },
+    "&:hover": {},
     [theme.breakpoints.down("md")]: {
       fontSize: "24px",
     },
-  },
-  submitRoot: {
-    "&:hover": {
-      // backgroundColor: theme.palette.buttonBackground.main,
-      // color: theme.palette.buttonHoverBackground.main,
-    },
-    [theme.breakpoints.down("md")]: {},
   },
 }));
 
@@ -48,6 +38,7 @@ export default function CustButton(props) {
           fontFamily: "Overpass",
           backgroundColor: props.backgroundColor,
           fontWeight: props.fontWeight,
+          borderColor: props.color,
         }}
         disableElevation
         name={props.butName}
