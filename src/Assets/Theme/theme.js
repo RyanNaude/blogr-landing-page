@@ -23,18 +23,6 @@ const Verydarkdesaturatedblue = "#3f4164";
 
 export default createTheme({
   palette: {
-    Lightred: { main: Lightred },
-    Verylightred: { main: Verylightred },
-    Verydarkblue: { main: Verydarkblue },
-    White: { main: White },
-    Grayishblue: { main: Grayishblue },
-    Verydarkgrayishblue: { main: Verydarkgrayishblue },
-    Verydarkblackblue: { main: Verydarkblackblue },
-    LightredGrad: { main: LightredGrad },
-    VerylightredGrad: { main: VerylightredGrad },
-    Verydarkgrayblue: { main: Verydarkgrayblue },
-    Verydarkdesaturatedblue: { main: Verydarkdesaturatedblue },
-
     primary: {
       main: Lightred,
     },
@@ -47,6 +35,17 @@ export default createTheme({
     backGround: {
       main: White,
     },
+    Lightred: { main: Lightred },
+    Verylightred: { main: Verylightred },
+    Verydarkblue: { main: Verydarkblue },
+    White: { main: White },
+    Grayishblue: { main: Grayishblue },
+    Verydarkgrayishblue: { main: Verydarkgrayishblue },
+    Verydarkblackblue: { main: Verydarkblackblue },
+    LightredGrad: { main: LightredGrad },
+    VerylightredGrad: { main: VerylightredGrad },
+    Verydarkgrayblue: { main: Verydarkgrayblue },
+    Verydarkdesaturatedblue: { main: Verydarkdesaturatedblue },
   },
   typography: {
     adviceHeader: {

@@ -13,15 +13,6 @@ import CustMenu from "../Components/ui/CustMenu";
 /** Material UI Styles */
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.primary.main,
-    borderRadius: "60px",
-    marginRight: "-4rem",
-    marginLeft: "-0.5rem",
-    marginTop: "-4rem",
-    paddingTop: "4rem",
-    paddingLeft: "5rem",
-    width: "1440px",
-    height: "15rem",
     [theme.breakpoints.down("md")]: {
       // width: "375px",
     },
@@ -34,7 +25,7 @@ export default function MainMenu(props) {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Grid item container xs={4} direction="row">
+    <Grid item container xs={12}>
       <Grid item xs={4}>
         <CustMenu
           color={"#fff"}
@@ -58,6 +49,8 @@ export default function MainMenu(props) {
           open={props.openComp}
           fontFamily={"Overpass"}
         />
+      </Grid>
+      <Grid item xs={4}>
         <CustMenu
           color={"#fff"}
           menuTitle={props.menuConnTitle}

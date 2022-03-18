@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { StyledEngineProvider } from "@mui/material/styles";
+
 /** import base pages */
 import Header from "../Layout/Header/Header";
 import Main from "../Layout/Main/Main";
@@ -58,31 +60,33 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Grid container justifyContent={"center"} alignItems={"center"}>
-        <Grid item container justifyContent={"center"} width="1440px" style={{backgroundColor: "red"}}>
-          <Header
-            prodMap={prodMap}
-            companyMap={companyMap}
-            connectMap={connectMap}
-            handleClick={handleClick}
-            handleClose={handleClose}
-            anchorProdEl={anchorProdEl}
-            anchorCompEl={anchorCompEl}
-            anchorConnEl={anchorConnEl}
-            openProd={openProd}
-            openComp={openComp}
-            openConn={openConn}
-          />
-          <Main />
-          <Footer
-            prodMap={prodMap}
-            companyMap={companyMap}
-            connectMap={connectMap}
-          />
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Grid container justifyContent={"center"} alignItems={"center"}>
+          <Grid item container justifyContent={"center"} width="1440px">
+            <Header
+              prodMap={prodMap}
+              companyMap={companyMap}
+              connectMap={connectMap}
+              handleClick={handleClick}
+              handleClose={handleClose}
+              anchorProdEl={anchorProdEl}
+              anchorCompEl={anchorCompEl}
+              anchorConnEl={anchorConnEl}
+              openProd={openProd}
+              openComp={openComp}
+              openConn={openConn}
+            />
+            <Main />
+            <Footer
+              prodMap={prodMap}
+              companyMap={companyMap}
+              connectMap={connectMap}
+            />
+          </Grid>
         </Grid>
-      </Grid>
-    </ThemeProvider>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 

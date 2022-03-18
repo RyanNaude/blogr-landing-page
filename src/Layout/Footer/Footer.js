@@ -16,9 +16,8 @@ import SiteNav from "../../Components/SiteNav";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.tertiary.main,
-    borderRadius: "60px",
-    marginLeft: "-4rem",
-    // paddingRight: "20rem",
+    borderTopRightRadius: "60px",
+    paddingBottom: "3rem",
     width: "1440px",
     [theme.breakpoints.down("md")]: {
       // width: "375px",
@@ -40,7 +39,6 @@ export default function Footer(props) {
           connectMap={props.connectMap}
         />
       </Grid>
-      <Grid item style={{backgroundColor: theme.palette.tertiary.main, height: "3rem"}} xs={12}></Grid>
     </Grid>
   );
 }
