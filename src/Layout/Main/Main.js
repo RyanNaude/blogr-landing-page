@@ -32,8 +32,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.backGround.main,
 
-
-
     backgroundColor: "#F3F3F3",
     [theme.breakpoints.down("md")]: {
       // width: "375px",
@@ -65,15 +63,6 @@ export default function Main(props) {
             LaptopMobile={LaptopMobile}
           />
         </Grid>
-
-        {/* 4
-        <img src={ArrowDark} alt="" className={classes.icon}  style={{width: "5rem", height: "5rem"}} />
-        5
-        <img src={ArrowLight} alt="" className={classes.icon}  style={{width: "5rem", height: "5rem"}} />
-        6
-        <img src={CloseIcon} alt="" className={classes.icon}  style={{width: "5rem", height: "5rem"}} />
-        7
-        <img src={Hamburger} alt="" className={classes.icon}  style={{width: "5rem", height: "5rem"}} /> */}
       </Grid>
     </Grid>
   );

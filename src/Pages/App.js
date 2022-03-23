@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { StyledEngineProvider } from "@mui/material/styles";
+import { useMediaQuery } from "@mui/material";
 
 /** import base pages */
 import Header from "../Layout/Header/Header";
@@ -27,6 +28,7 @@ const companyMap = ["About", "Team", "Blog", "Careers"];
 const connectMap = ["Contact", "Newsletter", "LinkedIn"];
 
 function App() {
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const [anchorProdEl, setAnchorProdEl] = useState(null);
   const [anchorCompEl, setAnchorCompEl] = useState(null);
   const [anchorConnEl, setAnchorConnEl] = useState(null);
@@ -34,7 +36,6 @@ function App() {
   const openComp = Boolean(anchorCompEl);
   const openConn = Boolean(anchorConnEl);
   const handleClick = (event) => {
-    console.log(event.target.id);
 
     switch (event.target.id) {
       case "Connect":
@@ -63,8 +64,18 @@ function App() {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <Grid container justifyContent={"center"} alignItems={"center"} style={{backgroundColor: "#F3F3F3"}}>
-          <Grid item container justifyContent={"center"} width="1440px">
+        <Grid
+          container
+          justifyContent={"center"}
+          alignItems={"center"}
+          style={{ backgroundColor: "#F3F3F3" }}
+        >
+          <Grid
+            item
+            container
+            justifyContent={"center"}
+            width={matchesMD ? "375px" : "1440px"}
+          >
             <Header
               prodMap={prodMap}
               companyMap={companyMap}

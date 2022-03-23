@@ -15,9 +15,12 @@ const useStyles = makeStyles((theme) => ({
     height: "2rem",
     borderRadius: "50px",
     width: "90%",
-    "&:hover": {},
+    "&:hover": {
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.secondary.main,
+    },
     [theme.breakpoints.down("md")]: {
-      fontSize: "24px",
+      // fontSize: "24px",
     },
   },
 }));
@@ -39,6 +42,7 @@ export default function CustButton(props) {
           backgroundColor: props.backgroundColor,
           fontWeight: props.fontWeight,
           borderColor: props.color,
+          fontSize: props.fontSize,
         }}
         disableElevation
         name={props.butName}

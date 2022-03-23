@@ -26,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "60%",
     background: "#f3f3f3  no-repeat",
     backgroundPosition: "-15% 90%",
+    [theme.breakpoints.down("md")]: {
+      backgroundSize: "80%",
+      backgroundPosition: "50% -25%",
+      height: "40rem",
+    },
   },
 }));
 
@@ -43,31 +48,56 @@ export default function MainBodMid(props) {
       justifyContent={"center"}
       className={classes.root}
     >
-      <Grid item xs={6} style={{ marginTop: "-4.5rem", paddingLeft: "4rem" }}>
+      <Grid
+        item
+        xs={6}
+        style={{
+          marginTop: matchesMD ? "-11rem" : "-4.5rem",
+          paddingLeft: matchesMD ? null : "4rem",
+          marginLeft: matchesMD ? "-11.5rem" : null,
+        }}
+      >
         <img
           src={Phones}
           alt=""
           className={classes.icon}
-          style={{ position: "absolute" }}
+          style={{ position: "absolute", height: matchesMD ? "50%" : null }}
         />
       </Grid>
       <Grid
         item
         container
-        xs={6}
+        xs={matchesMD ? 12 : 6}
         direction={"column"}
-        style={{ marginTop: "8rem", paddingRight: "5rem" }}
+        style={{
+          marginTop: "8rem",
+          paddingRight: matchesMD ? null : "5rem",
+          marginTop: matchesMD ? "10rem" : null,
+        }}
       >
-        <Grid item container style={{ marginBottom: "2rem" }}>
+        <Grid
+          item
+          container
+          style={{ marginBottom: "2rem" }}
+          justifyContent={"center"}
+        >
           <CustTypog
-            text={"Robust content management"}
+            text={"State of the art infrastructure"}
             colorFont={"#fff"}
             weight={"600"}
             fontFamily={"Overpass"}
-            variant={"h5"}
+            variant={matchesMD ? "h4" : "h5"}
+            align={matchesMD ? "center" : null}
           />
         </Grid>
-        <Grid item container>
+        <Grid
+          item
+          container
+          style={{
+            paddingLeft: matchesMD ? "2rem" : null,
+            paddingRight: matchesMD ? "2rem" : null,
+          }}
+        >
           <CustTypog
             text={
               "Elementum curabitur vitae nunc sed velit dignissim sodales ut eu. Gravida quis blandit turpis cursus in hac habitasse platea. Velit laoreet id donec ultrices tincidunt. Eget duis at tellus at urna condimentum mattis pellentesque. Quis risus sed vulputate odio ut. Netus et malesuada fames ac turpis egestas. Est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. "
@@ -76,6 +106,7 @@ export default function MainBodMid(props) {
             weight={"300"}
             fontFamily={"Overpass"}
             variant={"body1"}
+            align={matchesMD ? "center" : null}
           />
         </Grid>
       </Grid>

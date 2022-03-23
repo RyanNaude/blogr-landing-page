@@ -23,6 +23,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "143% 20%",
     paddingTop: "5rem",
     paddingBottom: "10rem",
+    [theme.breakpoints.down("md")]: {
+      backgroundImage: `url(${EditorMobile})`,
+      backgroundSize: "100%",
+      backgroundPosition: "50% 15%",
+    },
+  },
+  midBodyTitle: {
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "25rem",
+    },
   },
 }));
 
@@ -40,35 +50,49 @@ export default function MainBodTop(props) {
       xs={12}
       className={classes.root}
     >
-      <Grid item container xs={12} justifyContent={"center"}>
+      <Grid
+        item
+        container
+        xs={12}
+        justifyContent={"center"}
+        className={classes.midBodyTitle}
+      >
         <CustTypog
           text={"Designed for the future"}
-          fonts={"32px"}
+          fonts={matchesMD ? "24px" : "32px"}
           colorFont={"#1f3f5b"}
           weight={"600"}
           fontFamily={"Overpass"}
         />
       </Grid>
       <Grid item container direction={"row"}>
-        <Grid item container direction={"column"} xs={6}>
+        <Grid item container direction={"column"} xs={matchesMD ? 12 : 6}>
           <Grid item container>
             <Grid
               item
               container
-              style={{ marginBottom: "2rem", paddingLeft: "5rem" }}
+              style={{
+                marginBottom: "2rem",
+                paddingLeft: matchesMD ? null : "5rem",
+              }}
+              justifyContent={"center"}
             >
               <CustTypog
                 text={"Introducing an extensable editor"}
                 colorFont={"#1f3f5b"}
                 weight={"600"}
                 fontFamily={"Overpass"}
-                variant={"h5"}
+                variant={matchesMD ? "h6" : "h5"}
               />
             </Grid>
             <Grid
               item
               container
-              style={{ marginBottom: "4rem", paddingLeft: "5rem" }}
+              style={{
+                marginBottom: "4rem",
+                paddingLeft: matchesMD ? null : "5rem",
+                // paddingTop: matchesMD ? "10rem" : null,
+              }}
             >
               <CustTypog
                 text={
@@ -78,6 +102,7 @@ export default function MainBodTop(props) {
                 weight={"600"}
                 fontFamily={"Overpass"}
                 variant={"body1"}
+                align={matchesMD ? "center" : null}
               />
             </Grid>
           </Grid>
@@ -85,7 +110,11 @@ export default function MainBodTop(props) {
             <Grid
               item
               container
-              style={{ marginBottom: "2rem", paddingLeft: "5rem" }}
+              style={{
+                marginBottom: "2rem",
+                paddingLeft: matchesMD ? null : "5rem",
+              }}
+              justifyContent={"center"}
             >
               <CustTypog
                 text={"Robust content management"}
@@ -93,12 +122,16 @@ export default function MainBodTop(props) {
                 weight={"600"}
                 fontFamily={"Overpass"}
                 variant={"h5"}
+                align={matchesMD ? "center" : null}
               />
             </Grid>
             <Grid
               item
               container
-              style={{ marginBottom: "4rem", paddingLeft: "5rem" }}
+              style={{
+                marginBottom: "4rem",
+                paddingLeft: matchesMD ? null : "5rem",
+              }}
             >
               <CustTypog
                 text={
@@ -108,6 +141,7 @@ export default function MainBodTop(props) {
                 weight={"600"}
                 fontFamily={"Overpass"}
                 variant={"body1"}
+                align={matchesMD ? "center" : null}
               />
             </Grid>
           </Grid>
@@ -119,8 +153,7 @@ export default function MainBodTop(props) {
           justifyContent={"center"}
           alignItems={"center"}
           style={{ paddingLeft: "17rem" }}
-        >
-        </Grid>
+        ></Grid>
       </Grid>
     </Grid>
   );

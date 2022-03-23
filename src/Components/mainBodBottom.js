@@ -24,6 +24,12 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "3rem",
     paddingBottom: "10rem",
     paddingTop: "13rem",
+    [theme.breakpoints.down("md")]: {
+      backgroundImage: `url(${LaptopMobile})`,
+      backgroundPosition: "50% 0%",
+      paddingTop: "25rem",
+      marginTop: "3rem",
+    },
   },
 }));
 
@@ -50,25 +56,33 @@ export default function MainBodBottom(props) {
           alignItems={"center"}
           style={{ paddingLeft: "17rem" }}
         ></Grid>
-        <Grid item container direction={"column"} xs={6}>
+        <Grid item container direction={"column"} xs={matchesMD ? 12 : 6}>
           <Grid item container>
             <Grid
               item
               container
-              style={{ marginBottom: "2rem", paddingRight: "5rem" }}
+              style={{
+                marginBottom: "2rem",
+                paddingRight: matchesMD ? null : "5rem",
+              }}
+              justifyContent={matchesMD ? "center" : null}
             >
               <CustTypog
-                text={"Introducing an extensable editor"}
+                text={"Free, open, simple"}
                 colorFont={"#1f3f5b"}
                 weight={"600"}
                 fontFamily={"Overpass"}
                 variant={"h5"}
+                align={matchesMD ? "center" : null}
               />
             </Grid>
             <Grid
               item
               container
-              style={{ marginBottom: "4rem", paddingRight: "5rem" }}
+              style={{
+                marginBottom: "4rem",
+                paddingRight: matchesMD ? null : "5rem",
+              }}
             >
               <CustTypog
                 text={
@@ -78,6 +92,7 @@ export default function MainBodBottom(props) {
                 weight={"600"}
                 fontFamily={"Overpass"}
                 variant={"body1"}
+                align={matchesMD ? "center" : null}
               />
             </Grid>
           </Grid>
@@ -85,20 +100,28 @@ export default function MainBodBottom(props) {
             <Grid
               item
               container
-              style={{ marginBottom: "2rem", paddingRight: "5rem" }}
+              style={{
+                marginBottom: "2rem",
+                paddingRight: matchesMD ? null : "5rem",
+              }}
+              justifyContent={matchesMD ? "center" : null}
             >
               <CustTypog
-                text={"Robust content management"}
+                text={"Powerfull Tooling"}
                 colorFont={"#1f3f5b"}
                 weight={"600"}
                 fontFamily={"Overpass"}
                 variant={"h5"}
+                align={matchesMD ? "center" : null}
               />
             </Grid>
             <Grid
               item
               container
-              style={{ marginBottom: "4rem", paddingRight: "5rem" }}
+              style={{
+                marginBottom: "4rem",
+                paddingRight: matchesMD ? null : "5rem",
+              }}
             >
               <CustTypog
                 text={
@@ -108,6 +131,7 @@ export default function MainBodBottom(props) {
                 weight={"600"}
                 fontFamily={"Overpass"}
                 variant={"body1"}
+                align={matchesMD ? "center" : null}
               />
             </Grid>
           </Grid>

@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({}));
 
 export default function CustTypog(props) {
   const classes = useStyles();
-
   return (
     <Typography
       variant={props.variant}
@@ -20,6 +19,7 @@ export default function CustTypog(props) {
         letterSpacing: props.letSpace,
         fontFamily: props.fontFamily,
         color: props.colorFont,
+        textAlign: props.align,
       }}
     >
       {props.text}

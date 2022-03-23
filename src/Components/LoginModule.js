@@ -34,7 +34,7 @@ export default function LoginModule(props) {
           butValue={"Login"}
           variant={"text"}
           color={theme.palette.White.main}
-          backgroundColor={theme.palette.primary.main}
+          backgroundColor={"transparent"}
         />
       </Grid>
       <Grid item xs={6}>

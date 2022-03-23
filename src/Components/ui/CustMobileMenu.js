@@ -7,6 +7,8 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
+import MenuIcon from "@mui/icons-material/Menu";
+
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -50,7 +52,8 @@ const StyledMenu = styled((props) => (
   },
 }));
 
-export default function CustMenu(props) {
+export default function CustMobileMenu(props) {
+  console.log(props);
   return (
     <div>
       <Button
@@ -60,14 +63,14 @@ export default function CustMenu(props) {
         aria-expanded={props.open ? "true" : undefined}
         disableElevation
         onClick={props.handleClick}
-        endIcon={<KeyboardArrowDownIcon />}
+        endIcon={<MenuIcon />}
         style={{
           //   width: props.butWidth,
           color: props.color,
           fontFamily: props.fontFamily,
         }}
       >
-        {props.menuTitle}
+        test
       </Button>
       <StyledMenu
         id={props.menuTitle}
@@ -78,7 +81,7 @@ export default function CustMenu(props) {
         open={props.open}
         onClose={props.handleClose}
       >
-        {props.menuMap.map((data) => {
+        {props.menuTitleArray.map((data) => {
           return (
             <MenuItem onClick={props.handleClose} disableRipple key={data}>
               {data}
